@@ -1,0 +1,8 @@
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/RssNews.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/edit_cache.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/rebuild_cache.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/list_install_components.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/install.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/install/local.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/install/strip.dir
+/home/florian/Pro/cpp/RssNews/build/CMakeFiles/RssNews_autogen.dir
