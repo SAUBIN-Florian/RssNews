@@ -18,8 +18,8 @@ private:
 
 class Feed {
 public:
-    explicit Feed();
-    ~Feed();
+    explicit Feed() = default;
+    ~Feed() = default;
 
 private:
    QString m_title;
