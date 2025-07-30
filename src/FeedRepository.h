@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QSqlDatabase>
 #include <QObject>
 #include <QVector>
 
@@ -21,5 +22,6 @@ public:
     void deleteFeed(int id);
 
 private:
+    QSqlDatabase* m_db;
     RssParser* m_parser;
 };
