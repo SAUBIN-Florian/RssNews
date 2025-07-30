@@ -21,9 +21,11 @@ void RssParser::extract_tokens_from_file(const QString& file_path, Feed &feed) {
     }
 
     QXmlStreamReader xml(&file);
-    //TODO: Fix infinite loop here: 
+
     while (!xml.atEnd() || !xml.hasError()) {
-        if (xml.name() == "rss") {
+	xml.readNext();
+
+	if (xml.name() == "rss") {
             spec_rss2(xml, feed);
             break;
         } else if(xml.name() == "feed") {
