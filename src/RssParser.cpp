@@ -18,6 +18,7 @@ void RssParser::extract_tokens_from_file(const QString& file_path, Feed &feed) {
     QFile file(file_path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qWarning() << "Can't open the file";
+	return;
     }
 
     QXmlStreamReader xml(&file);
@@ -104,21 +105,24 @@ void RssParser::spec_atom(QXmlStreamReader& xml, Feed& feed) {
             while (!(xml.isEndElement() && xml.name() == "entry")) {
                 xml.readNext();
 
+		const auto name = xml.name();
+		const auto text = xml.readElementText();
+
                 if (xml.isStartElement()) {
-                    if (xml.name() == "title") item.setTitle(xml.readElementText());
-                    else if (xml.name() == "summary") item.setDescription(xml.readElementText());
-                    else if (xml.name() == "content") item.setContent(xml.readElementText());
-                    else if (xml.name() == "link") {
+                    if (name == "title") item.setTitle(text);
+                    else if (name == "summary") item.setDescription(text);
+                    else if (name == "content") item.setContent(text);
+                    else if (name == "link") {
                         auto href = xml.attributes().value("href").toString();
                         if (!href.isEmpty()) item.setLink(href);
 		    } 
-		    else if (xml.name() == "id") item.setGuid(xml.readElementText());
-		    else if (xml.name() == "author") {
+		    else if (name == "id") item.setGuid(text);
+		    else if (name == "author") {
                         QString author;
-                        while (!(xml.isEndElement() && xml.name() == "author")) {
+                        while (!(xml.isEndElement() && name == "author")) {
                             xml.readNext();
-                            if (xml.isStartElement() && xml.name() == "name") {
-                                author = xml.readElementText();
+                            if (xml.isStartElement() && name == "name") {
+                                author = text;
                             }
                         }
                         item.setAuthor(author);
