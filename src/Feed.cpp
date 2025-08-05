@@ -21,7 +21,7 @@ void Feed::appendItem(FeedItem &item) { m_items->append(item); }
 
 //FeedItem implementation
 FeedItem::FeedItem(QString guid, QString title, QString description, QString link, QString content, QString author, QDateTime pubdate)
-: m_guid{guid}, m_title{title}, m_description{description}, m_link{link}, m_content{content}, m_author{author}, m_pubdate{pubdate} {}i
+: m_guid{guid}, m_title{title}, m_description{description}, m_link{link}, m_content{content}, m_author{author}, m_pubdate{pubdate} {}
 
 FeedItem::~FeedItem() {}
 
