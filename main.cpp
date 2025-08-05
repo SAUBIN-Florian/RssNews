@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     Feed feeder = Feed();
     RssParser* parser = RssParser::getInstance();
     parser->extract_tokens_from_file("./rss.xml", feeder);
-
+    
     window.show();
     return app.exec();
 }
