@@ -42,4 +42,5 @@
 
 build/
 .cache/
-rss.xml
+./rss.xml
+

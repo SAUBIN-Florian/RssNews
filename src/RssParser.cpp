@@ -52,9 +52,10 @@ void RssParser::extract_tokens_from_url(const QString& url, Feed &feed) {
 }
 
 void RssParser::spec_rss2(QXmlStreamReader& xml, Feed& feed) {
-    QXmlStreamReader::TokenType token = xml.readNext();
-    
-    qDebug() << token << " spec_rss2";
+    while (!xml.atEnd() || !xml.hasError()) {
+	xml.readNext();
+	
+    }
 
     if (xml.hasError()) {
         qWarning() << "Error XML: " << xml.errorString();
@@ -62,10 +63,10 @@ void RssParser::spec_rss2(QXmlStreamReader& xml, Feed& feed) {
 
 }
 
-void RssParser::spec_atom(QXmlStreamReader& xml, Feed& feed) {
-    QXmlStreamReader::TokenType token = xml.readNext();
-    
-    qDebug() << token << " spec_atom";
+void RssParser::spec_atom(QXmlStreamReader& xml, Feed& feed) {  
+    while (!xml.atEnd() || !xml.hasError()) {
+	xml.readNext();
+    }
 
     if (xml.hasError()) {
         qWarning() << "Error XML: " << xml.errorString();
