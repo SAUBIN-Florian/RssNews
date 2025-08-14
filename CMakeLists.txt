@@ -13,18 +13,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Sql)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
 
-set(UI_SOURCES
-    src/ui/CentralWidget.cpp
-    src/ui/CentralWidget.h
+set(GUI_SOURCES
+    gui/MainWindow.h gui/MainWindow.cpp
+    gui/CentralWidget.h gui/CentralWidget.cpp
+    gui/Sidebar.h gui/Sidebar.cpp
 )
 
 set(PROJECT_SOURCES
-    main.cpp 
-    mainwindow.h mainwindow.cpp
+    main.cpp  
     src/Feed.h src/Feed.cpp
     src/FeedRepository.h src/FeedRepository.cpp	
     src/RssParser.h src/RssParser.cpp
-    ${UI_SOURCES}
+    ${GUI_SOURCES}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

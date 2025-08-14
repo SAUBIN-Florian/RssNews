@@ -1,7 +1,6 @@
 #include <QApplication>
 
-#include "mainwindow.h"
-
+#include "gui/MainWindow.h"
 #include "src/RssParser.h"
 #include "src/Feed.h"
 

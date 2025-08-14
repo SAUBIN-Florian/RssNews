@@ -24,7 +24,7 @@ Clone the repository:
 git clone https://github.com/SAUBIN-Florian/RssNews
 cd RssNews
 
-cmake -B build
+cmake -B build -DCMAKE_PREFIX_PATH="""$YOUR_QT6_CMAKE_PATH"""
 cmake --build build
 
 ./build/RssNews

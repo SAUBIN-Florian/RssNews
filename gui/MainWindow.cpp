@@ -1,6 +1,5 @@
-#include "mainwindow.h"
-
-#include "src/ui/CentralWidget.h"
+#include "MainWindow.h"
+#include "CentralWidget.h"
 
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent) {
