@@ -4,15 +4,8 @@
 #include "RssParser.h"
 
 
-RssParser* RssParser::m_instance = nullptr;
-
 RssParser::RssParser() {};
 RssParser::~RssParser () {};
-
-RssParser* RssParser::getInstance() {
-    if (m_instance == nullptr) m_instance = new RssParser();
-    return m_instance;
-}
 
 void RssParser::extract_tokens_from_file(const QString& file_path, Feed &feed) {
     QFile file(file_path);

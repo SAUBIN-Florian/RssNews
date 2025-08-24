@@ -17,6 +17,7 @@ set(GUI_SOURCES
     gui/MainWindow.h gui/MainWindow.cpp
     gui/CentralWidget.h gui/CentralWidget.cpp
     gui/Sidebar.h gui/Sidebar.cpp
+    gui/MainContent.h gui/MainContent.cpp
 )
 
 set(PROJECT_SOURCES

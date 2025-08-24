@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QWidget>
+#include <QListView>
+#include <QStandardItemModel>
 
 
 class Sidebar: public QWidget {
@@ -9,4 +11,8 @@ class Sidebar: public QWidget {
 public:
     Sidebar(QWidget* parent = nullptr);
     ~Sidebar();
+
+private:
+   QListView* m_listView;
+   QStandardItemModel* m_model;
 };
